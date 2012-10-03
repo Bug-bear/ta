@@ -1,0 +1,10 @@
+S Barquentine 18.00
+S Bellgrove 12.50
+H Cutflower 7.50 37
+H Flannelcat 7.50 40
+S Flay 6.50
+H Fluke 7.50 41
+H Mulefire 7.50 35
+H Prunesquallor 16.50 45
+H Steerpike 4.50 55
+S Swelter 11.50

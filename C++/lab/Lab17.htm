@@ -1,0 +1,219 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./Lab17_files/filelist.xml">
+<title>Lab worksheet</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Jen Pedler</o:Author>
+  <o:Template>Lab.dot</o:Template>
+  <o:LastAuthor>rajesh pampapathi</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>241</o:TotalTime>
+  <o:LastPrinted>2002-11-22T19:46:00Z</o:LastPrinted>
+  <o:Created>2002-11-25T20:55:00Z</o:Created>
+  <o:LastSaved>2002-11-25T20:55:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>200</o:Words>
+  <o:Characters>1142</o:Characters>
+  <o:Company>Birkbeck College</o:Company>
+  <o:Lines>9</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1402</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+span.code
+	{mso-style-name:code;
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-ansi-language:EN-GB;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-header:url("./Lab17_files/header.htm") h1;
+	mso-footer:url("./Lab17_files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body lang=EN-GB style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-GB'>Lab worksheet 17<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'><b>1.</b>Write a program to read a text file and store each
+distinct word in a binary search tree. Then output a list of the words, one per
+line, in ASCII order.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'>Use the following class:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>class Binode<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>{public:<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'><span style='mso-tab-count:1'>      </span>string s;<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'><span style='mso-tab-count:1'>      </span>Binode *l, *r;<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>};<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'>First write the following procedures:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>void addnode(Binode*&amp; bn, string s)<o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'>This takes a pointer to the root node of the tree and
+a word as its parameters. If the word is not already in the tree it should
+store it, otherwise it should do nothing.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>void display(Binode* bn) <o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'>This takes the root node of the tree as its parameter
+and outputs the words one per line.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'>Then write a main function that reads the text from
+the file and calls</span><span style='mso-ansi-language:EN-GB'> </span><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>addnode()</span></span><span style='mso-ansi-language:EN-GB'>
+</span><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
+EN-GB'>to store each word in the tree. When all the words have been stored,
+call</span><span style='mso-ansi-language:EN-GB'> </span><span class=code><span
+style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>display()</span></span><span
+style='mso-ansi-language:EN-GB'> </span><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'>to output the words.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'>You can use the file N:\C++\nursery.txt as input for
+your program. You can use redirected input or open the file in the program,
+whichever you prefer.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'><b>2.</b>Write a function to return the number of nodes in the
+tree. Call it from main to output the count of the distinct words in the text.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'><b>3.</b>Count the number of occurrences of each word. To do
+this, add an <code>int</code> data field to the class and modify <code>addnode</code> so as to
+increment this field for each occurrence
+of the word. Modify the</span><span style='mso-ansi-language:EN-GB'> </span><span
+class=code><span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>display()</span></span><span style='mso-ansi-language:EN-GB'>
+</span><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
+EN-GB'>function to display this count next to each word.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'><b>4.</b>Write a function to take a pointer to the root node and
+an int <code>nocc</code> and to return the number of words that have <code>nocc</code>
+occurrences.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'><b>5.</b>Write a <code>Wordbag</code> class that:
+<ul>
+<li>has a default constructor</li>
+<li>has a constructor that takes a text file and builds a binary search tree of the words
+and their number of occurrences</li>
+<li>has a function that takes a word and returns its number of occurrences</li>
+<li>has a copy constructor</li>
+</ul>
+
+<o:p></o:p></span></p>
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0040)file://H:\public_www\cpplabs\Lab%203.htm -->
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:o =
+"urn:schemas-microsoft-com:office:office" xmlns:w =
+"urn:schemas-microsoft-com:office:word"><HEAD><TITLE>Lab worksheet</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content=Word.Document name=ProgId>
+<META content="MSHTML 6.00.2800.1264" name=GENERATOR>
+<META content="Microsoft Word 9" name=Originator><LINK
+href="./Lab%203_files/filelist.xml" rel=File-List><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Jen Pedler</o:Author>
+  <o:Template>Lab.dot</o:Template>
+  <o:LastAuthor>rajesh pampapathi</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:LastPrinted>2002-10-07T12:56:00Z</o:LastPrinted>
+  <o:Created>2002-10-08T16:23:00Z</o:Created>
+  <o:LastSaved>2002-10-08T16:23:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>301</o:Words>
+  <o:Characters>1721</o:Characters>
+  <o:Company>Birkbeck College</o:Company>
+  <o:Lines>14</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>2113</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<STYLE>@page Section1 {size: 612.0pt 792.0pt; margin: 72.0pt 90.0pt 72.0pt 90.0pt; mso-header-margin: 36.0pt; mso-footer-margin: 36.0pt; mso-even-header: url("./Lab%203_files/header.htm") eh1; mso-header: url("./Lab%203_files/header.htm") h1; mso-even-footer: url("./Lab%203_files/header.htm") ef1; mso-footer: url("./Lab%203_files/header.htm") f1; mso-first-header: url("./Lab%203_files/header.htm") fh1; mso-first-footer: url("./Lab%203_files/header.htm") ff1; mso-paper-source: 0; }
+P.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US
+}
+LI.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US
+}
+DIV.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US
+}
+P.MsoHeader {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US; tab-stops: center 216.0pt right 432.0pt
+}
+LI.MsoHeader {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US; tab-stops: center 216.0pt right 432.0pt
+}
+DIV.MsoHeader {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US; tab-stops: center 216.0pt right 432.0pt
+}
+P.MsoFooter {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US; tab-stops: center 216.0pt right 432.0pt
+}
+LI.MsoFooter {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US; tab-stops: center 216.0pt right 432.0pt
+}
+DIV.MsoFooter {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 6pt; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US; tab-stops: center 216.0pt right 432.0pt
+}
+SPAN.code {
+	mso-ansi-language: EN-GB; mso-style-name: code; mso-ansi-font-size: 10.0pt; mso-ascii-font-family: "Courier New"; mso-hansi-font-family: "Courier New"
+}
+DIV.Section1 {
+	page: Section1
+}
+OL {
+	MARGIN-BOTTOM: 0cm
+}
+UL {
+	MARGIN-BOTTOM: 0cm
+}
+</STYLE>
+</HEAD>
+<BODY lang=EN-GB style="tab-interval: 36.0pt">
+<DIV class=Section1>
+<P class=MsoNormal style="TEXT-ALIGN: center" align=center><B
+style="mso-bidi-font-weight: normal"><SPAN
+style="FONT-FAMILY: Arial; mso-ansi-language: EN-GB; mso-bidi-font-family: 'Times New Roman'">Lab
+worksheet 3<o:p></o:p></SPAN></B></P>
+<P class=MsoNormal
+style="MARGIN-LEFT: 18pt; TEXT-INDENT: -18pt; tab-stops: list 18.0pt left 72.0pt; mso-list: l3 level1 lfo3"><![if !supportLists]><SPAN
+style="mso-ansi-language: EN-GB">1.<SPAN
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN><![endif]><SPAN
+style="FONT-SIZE: 11pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-GB">Write
+a program that prompts for a string and then prompts for an int, <I
+style="mso-bidi-font-style: normal">n</I>. If <I
+style="mso-bidi-font-style: normal">n</I> is less than or equal to the length of
+the string, output the first <I style="mso-bidi-font-style: normal">n</I>
+characters of the string. Otherwise output the message "String too
+short."<o:p></o:p></SPAN></P>
+<P class=MsoNormal
+style="MARGIN-LEFT: 18pt; TEXT-INDENT: -18pt; tab-stops: list 18.0pt left 72.0pt; mso-list: l3 level1 lfo3"><![if !supportLists]><SPAN
+style="mso-ansi-language: EN-GB">2.<SPAN
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN><![endif]><SPAN
+style="FONT-SIZE: 11pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-GB">Write
+a program that prompts for a number between 1000 and 3000. If the number entered
+is in this range, output "OK". Otherwise output "Not OK". Make sure your program
+gives the correct output for the boundary cases 1000 and
+3000.<o:p></o:p></SPAN></P>
+<P class=MsoNormal
+style="MARGIN-LEFT: 18pt; TEXT-INDENT: -18pt; tab-stops: list 18.0pt left 72.0pt; mso-list: l3 level1 lfo3"><![if !supportLists]><SPAN
+style="mso-ansi-language: EN-GB">3.<SPAN
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN><![endif]><SPAN
+style="FONT-SIZE: 11pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-GB">Modify
+the program above so that as well as the "OK"/"not OK" messages it also outputs
+"20th Century" if the number entered is in the range 1900..1999.
+<o:p></o:p></SPAN></P>
+<P class=MsoNormal
+style="MARGIN-LEFT: 21.6pt; TEXT-INDENT: -18pt; tab-stops: list 18.0pt; mso-list: l3 level1 lfo3"><![if !supportLists]><SPAN
+class=code><SPAN
+style="mso-ansi-font-size: 12.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">4.<SPAN
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </SPAN></SPAN></SPAN><![endif]><SPAN
+style="FONT-SIZE: 11pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-GB">A
+programmer expected the following program to output the message "Both zero" when
+the user entered 0 0, but there is a logic error.<BR></SPAN><SPAN
+class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'">int
+main()<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'">{<SPAN
+style="mso-tab-count: 1"> </SPAN>cout &lt;&lt;"Enter two
+ints\n";<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN>int x, y;<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN>cin &gt;&gt; x &gt;&gt;
+y;<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN>if (x &amp;&amp; y == 0)
+<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN style="mso-tab-count: 1">&nbsp;
+</SPAN>cout &lt;&lt; "Both zero\n";<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN>else <o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN>{<SPAN style="mso-tab-count: 1">&nbsp;
+</SPAN>cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt;
+"\n";<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN style="mso-tab-count: 1">&nbsp;
+</SPAN>cout &lt;&lt; "y = " &lt;&lt; y &lt;&lt;
+"\n";<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN>}<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'"><SPAN
+style="mso-tab-count: 1">&nbsp; </SPAN>return 0;<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21.6pt"><SPAN class=code><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-bidi-font-family: 'Times New Roman'">}</SPAN></SPAN><SPAN
+style="FONT-SIZE: 11pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-GB"><BR>First
+work out what you think the output will be for the values of x and y given
+below, then enter and run the program (exactly as given) to see if you are
+correct. Finally, modify the program so that it gives the correct
+output.<BR>x<SPAN style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>y<BR>0<SPAN
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>0</SPAN><SPAN
+style="FONT-SIZE: 11pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-GB; mso-bidi-font-family: 'Times New Roman'"><BR></SPAN><SPAN
+style="FONT-SIZE: 11pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-GB">5<SPAN
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>0<BR>0<SPAN
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>5<o:p></o:p></SPAN></P>
+
+
+<p class=MsoNormal><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Write a program to output the first ten integers, their square and
+their cube. Output them in columns with headings as in the example below:<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr>
+  <td width=97 valign=top style='width:72.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Integer<o:p></o:p></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Square<o:p></o:p></span></p>
+  </td>
+  <td width=102 valign=top style='width:76.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>Cube<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=97 valign=top style='width:72.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=102 valign=top style='width:76.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=97 valign=top style='width:72.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=102 valign=top style='width:76.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>8<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=97 valign=top style='width:72.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></span></p>
+  </td>
+  <td width=102 valign=top style='width:76.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>...<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=97 valign=top style='width:72.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>10<o:p></o:p></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>100<o:p></o:p></span></p>
+  </td>
+  <td width=102 valign=top style='width:76.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'>1000<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Write a program that takes a filename including extension (e.g.
+hello.cpp) as its input. Use a loop to step through the string, looking at each
+character until it finds the &quot;.&quot; Then output the filename without the
+extension.<br>
+Modify the program so that it will accept filenames until the end of input is
+signalled.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Write a program that reads a series of integers. Then output the sum, average,
+maximum and minimum of the integers input.
+Run your program (a) with input from the keyboard (b) reading the file n:\C++\numbers
+(using redirection of the standard input stream (&lt; from the command line)).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Write a program that outputs the current time followed by a listing of
+ten times at thirty-minute intervals from the current time.<o:p></o:p></span></p>
+
+<br>
+<br>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Write a program that prompts the user for a string then outputs a
+pattern like the following (in this example the input string was "parrot").<br>
+<br>
+</span><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'>parrot<br>
+arrot<br>
+rrot<br>
+rot<br>
+ot<br>
+t<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Write a program that uses getline() to read in a date string of the
+format <i>day</i> <i>month</i> (such as 3 October). Use an istringstream object
+to split it into an int <i>day</i> and a string <i>month</i>. Then output the
+day and use a switch statement (see near the end of the notes for week 2)
+to add the appropriate suffix (<i>st</i>, <i>nd</i>,
+<i>rd </i>or <i>th</i>). For example if the day was 3 you should output 3rd, if
+it was 22 you should output 22nd and so on. (Make sure it works correctly for
+11th!). Finally output the month.
+For example if the input was 3 October your final output should be 3rd October.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Modify the program you wrote above so that it uses a loop to read a
+series of dates. Add error checking so that if a date is entered incorrectly
+(e.g. October 3) it outputs an error message and moves on to the next input.
+Use keyboard input to test your program with both correct and incorrect dates.
+When you are satisfied that it works test it using the file n:\C++\days.txt.
+There are three incorrect dates in this file.<o:p></o:p></span></p>
+
+
+
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>12.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>Write
+a program to read an integer. Use the conditional operator (see near the end of week 2 of the course notes)
+to output "Odd" if it
+is an odd number or "Even" if it is an even number. Apart from the lines
+associated with input your main function only needs one line of code to do
+this.<o:p></o:p></SPAN></P>
+
+
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;font-family:"Courier New"'>13.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>The following program compiles and runs, but is in need of some
+improvement. Rewrite it, making any changes you think appropriate. Compile and
+run your new program.</span><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:49.65pt;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+10.0pt;font-family:"Courier New";color:blue'>#include</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> &lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:49.65pt;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+10.0pt;font-family:"Courier New";color:blue'>using</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:blue'>namespace</span>
+std;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>int</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> main()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>{<span style='color:blue'>int</span>
+x, y, n;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>cin &gt;&gt; n;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>if</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> (cin.fail())<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>return</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> 1;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>x = n;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>cin &gt;&gt; n;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>if</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> (cin.fail())<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>return</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> 1;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>if</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> (n &gt; x)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>{y = x;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>x = n; }<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>else</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> y = n;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>while</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> (cin &gt;&gt; n)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>{<span style='color:blue'>if</span>
+(n &gt; x)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>{y = x;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>x = n; }<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>else</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> <span
+style='color:blue'>if</span> (n &gt; y)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>y = n; }<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>cout &lt;&lt; x &lt;&lt;
+&quot; &quot; &lt;&lt; y &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+49.65pt;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:2.0cm'><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</DIV></BODY></HTML>
