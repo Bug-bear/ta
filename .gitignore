@@ -1,7 +1,6 @@
-*
-!C++/lab/
-!ISD/lab/
-!PiJ/lab/
+!C++\lab\
+!ISD\lab\
+!PiJ\lab\
 *.exe
 *.pdf
 *.ppt
