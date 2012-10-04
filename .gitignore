@@ -21,3 +21,4 @@ xmltools/
 *.zip
 *.xls
 *.jnlp
+*.class
