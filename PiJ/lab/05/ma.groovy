@@ -1,0 +1,13 @@
+Matrix ma = new Matrix(3,4);
+ma.prettyPrint();
+ma.setElement(2,2);
+ma.prettyPrint();
+ma.setElement(3,3);
+ma.prettyPrint();
+ma.setRow(2,"6,7,8,9");
+ma.prettyPrint();
+ma.setRow(3,"6,7,8,9");
+ma.prettyPrint();
+ma.setColumn(2,"3,4,5");
+ma.prettyPrint();
+println ma.toString();
