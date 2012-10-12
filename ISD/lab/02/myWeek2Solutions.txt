@@ -1,0 +1,451 @@
+
+
+
+A1: 
+
+
+import java.util.Scanner;
+
+public class MarkToGrade
+{
+
+   public static void main(String[] args)
+   {
+      Scanner in = new Scanner(System.in);
+
+      final int A_MARK = 70;
+      final int B_MARK = 60;
+      final int C_MARK = 50;
+      final int D_MARK = 40; 
+      
+      System.out.print("Enter mark (0 - 100): ");
+      int mark = in.nextInt();
+
+      if (mark > 100 || mark < 0) {
+          System.out.println("Invalid mark");
+      }
+      else {
+          String grade;
+
+          if (mark >= 70) {
+             grade = "A";
+          }
+          else if (mark >= 60) {
+             grade = "B";
+          }
+          else if (mark >= 50) {
+             grade = "C";
+          }
+          else if (mark >= 40) {
+             grade = "D";
+          }
+          else {
+             grade = "F";
+          }
+          System.out.printf("The grade is %s\n", grade);
+      }
+   
+   }
+}
+
+
+A2: 
+
+
+import java.util.Scanner;
+
+public class ElectromagneticWavelength
+{
+   public static void main(String[] args) {
+      Scanner in = new Scanner(System.in);
+
+      final double RADIO_WAVE_THRESHOLD = 1E-1;
+      final double MICROWAVE_THRESHOLD = 1E-3;
+      final double INFRARED_THRESHOLD = 7E-7;
+      final double VISIBLE_LIGHT_THRESHOLD = 4E-7;
+      final double ULTRAVIOLET_THRESHOLD = 1E-8;
+      final double X_RAYS_THRESHOLD = 1E-11;
+
+      System.out.print("Enter a wavelength: ");
+      double wavelength = in.nextDouble();
+
+      System.out.print("This is in the ");
+
+      if (wavelength >= RADIO_WAVE_THRESHOLD)
+      {
+         System.out.print("radio waves");
+      }
+      else if (wavelength >= MICROWAVE_THRESHOLD)
+      {
+         System.out.print("microwaves");
+      }
+      else if (wavelength >= INFRARED_THRESHOLD)
+      {
+         System.out.print("infrared");
+      }
+      else if (wavelength >= VISIBLE_LIGHT_THRESHOLD)
+      {
+         System.out.print("visible light");
+      }
+      else if (wavelength >= ULTRAVIOLET_THRESHOLD)
+      {
+         System.out.print("ultraviolet");
+      }
+      else if (wavelength >= X_RAYS_THRESHOLD)
+      {
+         System.out.print("X-ray");
+      }
+      else if (wavelength >= 0)
+      {
+         System.out.print("gamma ray");
+      }
+      else {
+         System.out.print("negative wavelength ? ");
+      }
+      System.out.println(" part of the spectrum");      
+    }
+}
+
+
+A3: 
+
+
+import java.util.Scanner;
+
+public class WaterState
+{
+   public static void main(String[] args)
+   {
+
+      final double WATER_FREEZE_TEMP_C = 0; // freezing temperature in Centigrade
+      final double WATER_FREEZE_TEMP_F = 32; // freezing temperature in Farenheit 
+
+      final double WATER_BOIL_TEMP_C = 100; // boiling temperature in Centigrade
+      final double WATER_BOIL_TEMP_F = 212; // boiling temperature in Farenheit 
+
+      Scanner in = new Scanner(System.in);
+
+      System.out.print("Enter temperature: ");
+      double temp = in.nextDouble();
+
+      System.out.print("Enter C for Centigrade or F for Fahrenheit: ");
+      String type = in.next();
+
+      if (type.compareTo("C") == 0) {
+         // Centigrade
+         if (temp > WATER_BOIL_TEMP_C) {
+            System.out.println("It's a gas.");
+         }
+         else if (temp > WATER_FREEZE_TEMP_C) {
+            System.out.println("It's a liquid.");
+         }
+         else {
+            System.out.println("It's a solid.");
+         }
+      }
+      else if (type.compareTo("F") == 0)
+      {
+         // Fahrenheit
+         if (temp > WATER_BOIL_TEMP_F) {
+            System.out.println("It's a gas.");
+         }
+         else if (temp > WATER_FREEZE_TEMP_F) {
+            System.out.println("It's a liquid.");
+         }
+         else {
+            System.out.println("It's a solid.");
+         }
+      }
+      else {
+         System.out.println("Invalid input.");      
+      }
+   }
+}
+
+
+A4 
+
+import java.util.Scanner;
+
+public class MaxOfThree
+{
+   public static void main(String[] args)
+   {
+      Scanner in = new Scanner(System.in);
+
+      System.out.println("Please enter three numbers: ");
+      double x = in.nextDouble();
+      double y = in.nextDouble();
+      double z = in.nextDouble();
+
+      double largest;
+
+      if (x > y) {
+         if (z > x) {
+            largest = z;
+         }
+         else {
+            largest = x;
+         }
+      }
+      else {
+         if (z > y) {
+            largest = z;
+         }
+         else {
+            largest = y;
+         }
+      }
+      System.out.println("The largest number is " + largest + ".");
+   }
+}
+
+A5
+
+import java.util.Scanner;
+
+public class SameToTwoDecimalPlaces
+{
+   public static void main(String[] args)
+   {
+      Scanner in = new Scanner(System.in);
+      System.out.println("Enter two numbers: ");
+      double x = in.nextDouble();
+      double y = in.nextDouble();
+      double difference = x-y;
+
+      if (Math.abs(difference) < 1E-2) {
+          System.out.println("Same up to two decimal places.");
+      }
+      else {
+          System.out.println("Not the same.");
+      }
+   }
+}
+
+
+A6:
+
+import java.util.Scanner;
+
+public class LeapYearCalculation
+{
+   public static void main(String[] args)
+   {
+      Scanner in = new Scanner(System.in);
+      System.out.println("Enter a year: ");
+      int year = in.nextInt();
+      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+          System.out.println("It's a leap year");
+      }
+      else {
+          System.out.println("It's not a leap year");
+      }
+   }
+}
+
+
+
+A7:
+
+import java.util.Scanner;
+
+public class SortThreeStrings
+{
+   public static void main(String[] args)
+   {
+      Scanner in = new Scanner(System.in);
+      System.out.println("Enter three strings: ");
+      String a = in.next();
+      String b = in.next();
+      String c = in.next();
+      
+      String first, second, third;
+      
+      if (a.compareTo(b) < 0) 
+      {
+         if (a.compareTo(c) < 0) 
+         {
+            first = a;
+            if (b.compareTo(c) < 0)
+            {
+               second = b;
+               third = c;
+            } 
+            else 
+            {
+               second = c;
+               third = b;
+            }
+         } 
+         else 
+         {
+            // c < a < b
+            first = c;
+            second = a;
+            third = b;
+         }
+      } 
+      else 
+      {
+         // b < a
+         if (b.compareTo(c) < 0) 
+         {
+            //b < c
+            first = b;
+            if (a.compareTo(c) < 0) 
+            {
+               // a < c
+               second = a;
+               third = c;
+            } 
+            else 
+            {
+               // c < a
+               second = c;
+               third = a;
+            }
+         } 
+         else 
+         {
+            // c < b < a
+            first = c;
+            second = b;
+            third = a;
+         }
+      }
+      System.out.printf("%s\n%s\n%s\n%s\n", "Their order is ", first, second, third);
+   }
+}
+
+
+B1: 
+
+public class Balance 
+{
+   public static void main(String[] args) 
+   {
+      double balance = 1000;
+      balance = balance * 1.05;
+      System.out.printf("Balance after first year is £%.2f\n",balance); 
+
+      balance = balance * 1.05;
+      System.out.printf("Balance after second year is £%.2f\n",balance); 
+
+      balance = balance * 1.05;
+      System.out.printf("Balance after third year is £%.2f\n",balance);
+   }
+}
+
+
+B5: 
+
+import java.util.Scanner;
+
+public class RestaurantMeal
+{
+   public static void main(String[] args)
+   {
+      final double VAT_RATE = 0.175;
+      final double GRAT_RATE = 0.1;
+
+      Scanner in = new Scanner(System.in);
+      System.out.print("Enter total meal cost: ");
+      double totalMealCost = in.nextDouble();
+
+      double vat = totalMealCost * VAT_RATE;
+      double grat = totalMealCost * GRAT_RATE;
+
+      double mealPrice = totalMealCost + vat + grat;
+      System.out.printf("Total price of meal: £%.2f\n",mealPrice); 
+   }
+}
+
+
+
+B2:
+
+import java.util.Scanner;
+
+public class Powers 
+{
+   public static void main(String[] args) 
+   {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Please enter a number: ");
+        double number = in.nextDouble();
+
+        double square = Math.pow(number,2);
+        System.out.printf("%-14s%10.2f\n","Square:",square);
+
+        double cube = Math.pow(number,3);
+        System.out.printf("%-14s%10.2f\n","Cube:",cube);
+
+        double fourthPower = Math.pow(number,4);
+        System.out.printf("%-14s%10.2f\n","Fourth power:",fourthPower);        
+
+   }
+}
+
+
+B4:
+
+import java.util.Scanner;
+
+public class RectangleCalculations
+{
+   public static void main(String[] args)
+   {
+      Scanner in = new Scanner(System.in);
+
+      System.out.print("Please enter width of rectangle: ");
+      double width = in.nextDouble();
+
+      System.out.print("Please enter height of rectangle: ");
+      double height = in.nextDouble();
+
+      System.out.printf("%-24s%10.2f\n","Area of rectangle:",width * height);
+      System.out.printf("%-24s%10.2f\n","Perimeter of rectangle",2 * width + 2 * height);
+   
+   }
+}
+
+
+B3: 
+
+import java.util.Scanner;
+
+public class CompareIntegers 
+{
+   public static void main(String[] args) 
+   {
+      Scanner in = new Scanner(System.in);
+      System.out.print("Please enter the first integer: ");
+      int firstInt = in.nextInt();
+      System.out.print("Please enter the second integer: ");
+      int secondInt = in.nextInt();
+
+      int sum = firstInt + secondInt;
+      System.out.printf("%-12s%10d\n","Sum:",sum);
+
+      int difference = firstInt - secondInt;
+      System.out.printf("%-12s%10d\n","Difference:",difference);
+
+      int product = firstInt * secondInt;
+      System.out.printf("%-12s%10d\n","Product:",product);
+
+      double average = (firstInt + secondInt) / 2.0;
+      System.out.printf("%-12s%10.2f\n","Average:",average);
+
+      int max = Math.max(firstInt,secondInt);
+      System.out.printf("%-12s%10d\n","Maximum",max);
+
+      int min = Math.min(firstInt,secondInt);
+      System.out.printf("%-12s%10d\n","Minimum",min);
+   }
+}
+
+
+
+
+
