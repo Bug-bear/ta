@@ -1,6 +1,10 @@
 public class Matrix{
 	private int[][] arr;
 	
+	public int[][] getMatrix(){
+		return arr;
+	}
+	
 	public Matrix(int a,int b){
 		arr = new int[a][b];
 		for(int i=0; i<a; i++){
@@ -64,7 +68,7 @@ public class Matrix{
 	void setMatrix(String s){
 		String[] rows = s.split(";");
 		if(rows.length!=arr.length){
-			System.out.println("invalide row number "+rows.length);
+			System.out.println(rows.length + " mismatches row number "+arr.length);
 			return;
 		}
 		for(int i=0; i<arr.length; i++){
