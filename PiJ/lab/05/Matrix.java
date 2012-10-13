@@ -60,4 +60,22 @@ public class Matrix{
 		}
 		System.out.println();
 	}
+	
+	void setMatrix(String s){
+		String[] rows = s.split(";");
+		if(rows.length!=arr.length){
+			System.out.println("invalide row number "+rows.length);
+			return;
+		}
+		for(int i=0; i<arr.length; i++){
+			String[] cols = rows[i].split(",");
+			if(cols.length!=arr[0].length){
+				System.out.println("invalide column number: "+cols.length);
+				return;
+			}			
+			for(int j=0; j<cols.length; j++){
+				arr[i][j] = Integer.parseInt(cols[j]);
+			}
+		}
+	}
 }
