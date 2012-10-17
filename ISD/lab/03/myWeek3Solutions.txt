@@ -1,0 +1,288 @@
+1. 
+
+import java.util.Scanner;
+
+public class Main {
+
+     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input the inital amount : ");
+        double amount = in.nextDouble();
+
+        System.out.print("Input the annual interest (percentage) : ");
+        double interest = in.nextDouble();
+
+        if (interest <= 0 || interest > 100) {
+            System.out.println("Invalid input");
+        }
+        else {
+            int year = 0;
+            double balance = amount;
+            while (balance <= 2*amount) {
+                balance = balance + (interest/100 * balance);
+                year++;
+                System.out.printf("%s%d%s%.2f\n","After ",year,
+                        " years the balance is ",balance);
+            }
+        }
+    }
+}
+
+
+
+2. 
+
+import java.util.Scanner;
+
+public class Main {
+
+ 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input the twelve monthly average temperatures for 2011 : ");
+        
+        double highestTemp = in.nextDouble();
+        int highestMonth = 1;
+        for (int i = 2; i <= 12; i++) {
+            double nextTemp = in.nextDouble();
+            if (nextTemp > highestTemp) {
+                highestMonth = i;
+                highestTemp = nextTemp;
+            }            
+        }
+        if (highestMonth == 1) {
+            System.out.print("January");
+        }
+        else if (highestMonth == 2) {
+            System.out.print("February");
+        }
+        else if (highestMonth == 3) {
+            System.out.print("March");
+        }
+        else if (highestMonth == 4) {
+            System.out.print("April");
+        }
+        else if (highestMonth == 5) {
+            System.out.print("May");
+        }
+        else if (highestMonth == 6) {
+            System.out.print("June");
+        }
+        else if (highestMonth == 7) {
+            System.out.print("July");
+        }
+        else if (highestMonth == 8) {
+            System.out.print("August");
+        }
+        else if (highestMonth == 9) {
+            System.out.print("September");
+        }
+        else if (highestMonth == 10) {
+            System.out.print("October");
+        }
+        else if (highestMonth == 11) {
+            System.out.print("November");
+        }
+        else {
+            System.out.println("December");
+        }
+        System.out.println(" had the highest average temperature");
+    }
+}
+
+
+
+3. 
+
+import java.util.Scanner;
+
+public class Main {
+
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input the conversion rate from UK pounds to Euros: ");
+        double exchangeRate = in.nextDouble();
+        double nextAmount = -1; // initialise this to something other than 0 
+        
+        while (nextAmount != 0) {
+            System.out.println("Enter an amount in UK pounds: ");
+            nextAmount = in.nextDouble();
+            if (nextAmount != 0) {
+                System.out.printf("The equivalent mount in Euros is %.2f\n",
+                                    nextAmount * exchangeRate);
+            }
+            else {
+                System.out.println("End!");
+            }
+        }
+    }
+}
+
+
+4.
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input a word: ");
+        String word = in.next();
+        for (int i = 0; i < word.length(); i++) {
+            System.out.println(word.charAt(i));
+        }
+    }
+}
+
+
+
+5.
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input a word: ");
+        String word = in.next();
+        for (int i = word.length()-1; i >= 0; i--) {
+            System.out.print(word.charAt(i));
+        }
+    }
+}
+
+
+6. 
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        final int ROWS = 10;
+        final int COLUMNS = 10;
+
+        for (int row = 1; row <= ROWS; row++) {
+            // print out this row: :
+            for (int col = 1; col <= COLUMNS; col++) {
+                System.out.printf("%4d",row * col);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+7. 
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input a word: ");
+        String word = in.next();
+        for (int len = 1; len <= word.length(); len++) {
+            // print out all substrings of length len:
+            for (int j = 0; j <= word.length()-len; j++) {
+                System.out.println(word.substring(j,j+len));
+            }
+        }
+    }
+}
+
+
+8. 
+
+import java.util.Scanner;
+
+public class Main {
+
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input a word: ");
+        String word = in.next();
+        System.out.printf("The number of vowels is %d\n",countVowels(word));
+    }
+
+    /**
+     Counts the number of vowels in a string.
+     @param str the string
+     @return the number of vowels in str
+     */
+
+    public static int countVowels(String str)
+    {
+        int noOfVowels = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch == 'A' || ch == 'a' ||
+                ch == 'E' || ch == 'e' ||
+                ch == 'I' || ch == 'i' ||
+                ch == 'O' || ch == 'o' ||
+                ch == 'U' || ch == 'u' ) {
+                noOfVowels++;
+            }
+        }
+        return noOfVowels;
+    }
+}
+
+
+
+9.
+ 
+import java.util.Scanner;
+
+public class Main {
+
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input an initial bank balance: ");
+        double balance = in.nextDouble();
+        System.out.println("Input the yearly interest rate (0..100): ");
+        double interest = in.nextDouble();
+        System.out.println("Input the number of years: ");
+        int years = in.nextInt();
+
+        double newBalance = accumulateBalance(balance,interest,years);
+        System.out.printf("The final balance is %10.2f\n",newBalance);
+        
+    }
+
+
+    /**
+     Calculates the balance in an account after a number of years
+     of annual accumulation of interest.
+     @param initialAmount the amount initially in the account
+     @param yearlyInterest the yearly interest rate
+     @param noOfYears the number of years the amount will be invested for
+     @return amount in the account after noOfYears years 
+     */
+
+    public static double accumulateBalance(double initialAmount,
+            double yearlyInterest, int noOfYears)
+    {
+        double balance = initialAmount;
+        for (int i = 0; i < noOfYears; i++) {
+            balance = balance + (yearlyInterest/100 * balance);
+        }
+        return balance;
+    }
+}
+
+
+
+
+
+ 
+
+
+
+
+
