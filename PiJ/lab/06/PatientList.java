@@ -70,6 +70,8 @@ public class PatientList{
 	public static void main(String[] args) {
 		PatientList ourList = new PatientList();
 		ourList.head = new Patient("bean", 50, "phd");
+		
+		/*
 		for(int i=0; i<10; i++){
 			Patient newPatient = new Patient("douzi" + i, i, "master");
 			ourList.head.addPatient(newPatient);
@@ -97,5 +99,13 @@ public class PatientList{
 		
 		toDel = new Patient("none", 9, "master");
 		ourList.head.deletePatient(toDel);
+		*/
+		
+		/* no way to remove everything from the list
+		ourList.head.traverseForward();
+		Patient toDel = new Patient("bean", 6, "bsc");
+		ourList.head.deletePatient(toDel);
+		ourList.head.traverseForward();
+		*/
 	}
 }

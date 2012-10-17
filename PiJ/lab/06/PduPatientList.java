@@ -51,6 +51,11 @@ public class PduPatientList{
 			return;
 		}
 		else if(p.name.equals(name)){
+			if(p.nextPatient == null && p.lastPatient == null){
+				head = null;
+				tail = null;
+				return;
+			}
 			if(p == this.head){
 				this.head.nextPatient.lastPatient = null;
 				this.head = this.head.nextPatient;
@@ -71,24 +76,32 @@ public class PduPatientList{
 	
 	public void traverseForward(){
 		Patient p = this.head;
-		while(p != null){
+		do{
+			if(p == null){
+				System.out.println("empty list");
+				return;
+			}
 			System.out.println(p.name);
 			p = p.nextPatient;
-		}		
+		} while(p != null);
 	}
 	
 	public void traverseBackward(){
 		Patient p = this.tail;
-		while(p != null){
+		do{
+			if(p == null){
+				System.out.println("empty list");
+				return;
+			}		
 			System.out.println(p.name);
 			p = p.lastPatient;
-		}		
+		} while(p != null);		
 	}	
 	
 	public static void main(String[] args) {
 		PduPatientList ourList = new PduPatientList();
 		// add some patients
-		for(int i=0; i<10; i++){
+		for(int i=0; i<2; i++){
 			//ourList.prepend("Mr. " + i, i, "phd");
 			ourList.append("Mr. " + i, i, "phd");
 		}
@@ -100,7 +113,7 @@ public class PduPatientList{
 		ourList.traverseForward();
 		System.out.println();
 		
-		ourList.remove("Mr. 9");
+		ourList.remove("Mr. 1");
 		ourList.traverseForward();
 		System.out.println();		
 		ourList.traverseBackward();
