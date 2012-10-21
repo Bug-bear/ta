@@ -71,7 +71,7 @@ public class PatientList{
 		PatientList ourList = new PatientList();
 		ourList.head = new Patient("bean", 50, "phd");
 		
-		/*
+		
 		for(int i=0; i<10; i++){
 			Patient newPatient = new Patient("douzi" + i, i, "master");
 			ourList.head.addPatient(newPatient);
@@ -80,16 +80,16 @@ public class PatientList{
 		ourList.head.traverseForward();
 		System.out.println();
 		
-		Patient toDel = new Patient("douzi5", 5, "master");
-		ourList.head.deletePatient(toDel);
-		toDel = new Patient("douzi9", 9, "master");
+		Patient toDel = new Patient("douzi5", 8, "master");
+		//ourList.head.deletePatient(toDel);
+		//Patient toDel = new Patient("douzi9", 9, "master");
 		ourList.head.deletePatient(toDel);
 		
 		ourList.head.traverseForward();
 		System.out.println();
 		ourList.head.traverseBackward();
 		System.out.println();
-		
+		/*
 		Patient toAdd = new Patient("wawa", 6, "bsc");
 		ourList.head.addPatient(toAdd);		
 		ourList.head.traverseForward();
