@@ -1,12 +1,12 @@
 /**
 *	Array list version of Supermarket
 */
-public class ArraySupermarket implements PersonQueue {
+public class ArrayUnfairSupermarketSimple implements PersonQueue {
 	private Person[] customerArray;
     private int size;
     private static int INITIAL_ARRAY_SIZE = 5;
 	
-	public ArraySupermarket(){
+	public ArrayUnfairSupermarketSimple(){
 		this.customerArray = new Person[INITIAL_ARRAY_SIZE];
 		this.size = 0;
 	}
@@ -18,8 +18,9 @@ public class ArraySupermarket implements PersonQueue {
 	
 	public Person retrieve(){
 		size--;
-		Person ret = customerArray[0];
-		for(int i=0; i<size; i++){
+		int pos = getOldest();
+		Person ret = customerArray[pos];
+		for(int i=pos; i<size; i++){
 			customerArray[i] = customerArray[i+1];
 		}
 		customerArray[size] = null;
@@ -39,11 +40,24 @@ public class ArraySupermarket implements PersonQueue {
 			System.out.println("No one to be served");
 			return;
 		}
-		System.out.println("Customer " + retrieve().getID() + " is being served");
+		Person customer = retrieve();
+		System.out.println("Customer " + customer.getID() + " at the age of " + customer.getAge() + " is being served");
 	}	
 	
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		return this.size == 0;
+	}
+	
+	private int getOldest(){
+		int maxAge = this.customerArray[0].getAge();
+		int pos = 0;
+		for(int i=1; i<size; i++){
+			if(maxAge < customerArray[i].getAge()){
+				maxAge = customerArray[i].getAge();
+				pos = i;
+			}
+		}
+		return pos;
 	}
 
     private boolean isAlmostFull() {
@@ -69,10 +83,17 @@ public class ArraySupermarket implements PersonQueue {
 	}
 	
 	public static void main(String[] args){
-		ArraySupermarket adsa = new ArraySupermarket();
-		for(int i=1; i<10; i++){
-			adsa.addPerson(new Person(i,50-i));
-		}
+		ArrayUnfairSupermarketSimple adsa = new ArrayUnfairSupermarketSimple();
+		adsa.addPerson(new Person(1,50));
+		adsa.addPerson(new Person(2,51));
+		adsa.addPerson(new Person(3,23));
+		adsa.addPerson(new Person(4,31));
+		adsa.addPerson(new Person(5,44));
+		
+		adsa.checkQueue();
+		adsa.servePerson();
+		adsa.checkQueue();
+		adsa.servePerson();
 		adsa.checkQueue();
 		adsa.servePerson();
 		adsa.checkQueue();

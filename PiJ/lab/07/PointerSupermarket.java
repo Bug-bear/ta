@@ -30,7 +30,7 @@ public class PointerSupermarket implements PersonQueue {
 	
 	public void addPerson(Person p){
 		insert(p);
-		System.out.println("Customer " + p.getID() + " enters the market");
+		System.out.println("Customer " + p.getID() + "at the age of " + p.getAge() + " enters the market");
 	}
 	
 	public void servePerson(){
@@ -56,7 +56,7 @@ public class PointerSupermarket implements PersonQueue {
 	public static void main(String[] args){
 		PointerSupermarket Waitjack = new PointerSupermarket();
 		for(int i=1; i<10; i++){
-			Waitjack.addPerson(new Person(i));
+			Waitjack.addPerson(new Person(i,50-i));
 		}
 		Waitjack.checkQueue();
 		Waitjack.servePerson();
