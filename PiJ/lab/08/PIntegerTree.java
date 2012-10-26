@@ -150,7 +150,7 @@ public class PIntegerTree{
 			return;
 		}
 		else{
-			delete(this.root, num);
+			this.root = delete(this.root, num);
 		}
 	}
 	

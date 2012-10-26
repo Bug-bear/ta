@@ -23,8 +23,11 @@ public class PTreeTest{
 		System.out.println();
 		
 		System.out.println(tree.depth());
+		System.out.println();
 		
-		tree.remove(11);
+		//tree.remove(11);
+		//tree.display();
+		tree.remove(6);
 		tree.display();
 		/*
 		System.out.println(treeRoot.depth1(treeRoot,0));
