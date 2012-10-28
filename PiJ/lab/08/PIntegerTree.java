@@ -177,13 +177,13 @@ public class PIntegerTree{
                         node.getRight().setLeft(node.getLeft()); // move its left branch to the left of its right child
                         node = node.getRight(); // replace with its right child
                     }
-					else{
+					else{ //find out the smallest in the right branch and the parent
                         PIntegerTreeNode q, p = node.getRight();
                         while(p.getLeft().getLeft() != null)
                             p = p.getLeft();
                         q = p.getLeft();
                         p.setLeft(q.getRight());
-                        q.setLeft(node.getLeft());
+                        q.setLeft(node.getLeft()); // replace
                         q.setRight(node.getRight());
                         node = q;
                     }
@@ -202,7 +202,7 @@ public class PIntegerTree{
 	private void peep(PIntegerTreeNode node){
 		if(node != null){
 			peep(node.getLeft());
-			System.out.println(node.getVal());
+			System.out.print(node.getVal());
 			peep(node.getRight());
 		}
 	}

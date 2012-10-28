@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1351382522043_1" label="PiJ-labs" name="PiJ-labs">
+<item elementID="=09" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1351382208161_0" label="Window Working Set" name="Aggregate for window 1351382208160"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1351383031890_2" label="Window Working Set" name="Aggregate for window 1351383031890"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1351414387212_3" label="Window Working Set" name="Aggregate for window 1351414387212"/>
+<mruList name="PiJ-labs"/>
+</workingSetManager>
