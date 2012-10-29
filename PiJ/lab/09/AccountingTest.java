@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 public class AccountingTest{
 	@Test
-	public void testsAddBillToList(){
+	public void testsLaunchTester(){
 		Accounting acc = new Accounting();
 		String input[] = {"water", "1", "gas", "2", "END"};
 		String output = acc.launchTester(input);
