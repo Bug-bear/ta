@@ -1,0 +1,9 @@
+Northwest NW Joel Craig 3.0 .98 3  4
+Western          WE Sharon Kelly 5.3 .97 5 23
+Southwest SW Chris Foster 2.7 .8 2 18
+Southern SO May Chin 5.1 .95 4 15
+Southeast SE Derek Johnson 4.0 .7 4 17
+Eastern EA Susan Beal 4.4 .84 5 20
+Northeast NE TJ Nichols 5.1 .94 3 13
+North NO Val Schultz 4.5 .89 5 9
+Central CT Sheri Watson 5.7 .94 5 13
