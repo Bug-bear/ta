@@ -17,6 +17,7 @@ public class TextIO{
 		while(in2.hasNext()){
 			System.out.print(in2.next());
 		}
+		System.out.println();
 		
 		Scanner in3 = new Scanner(input3);
 		in3.useDelimiter("");
