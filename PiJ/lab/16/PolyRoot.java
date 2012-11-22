@@ -18,9 +18,7 @@ public class PolyRoot{
 			ret.add(high);
 		}
 		//if(low<high && ret.size()<=(poly.length-1) ((testVal(poly,low)*testVal(poly,high))<0 || ret.size()<=poly.length-1)){
-		if(low<high){
-			ret.addAll(eval(poly, low+1, high-1));
-		}
+		// add bits here according to requirements
 		return ret;
 	}
 	
