@@ -120,7 +120,7 @@ public class SortAndSearch{
 			ret.add(left.get(l));
 			l++;
 		}
-		if(r < right.size()){
+		while(r < right.size()){
 			ret.add(right.get(r));
 			r++;
 		}
