@@ -1,6 +1,4 @@
-import java.rmi.Remote;
 import java.rmi.*;
-import java.rmi.RemoteException;
 import java.net.*;
 
 public class EchoClient{
@@ -15,7 +13,7 @@ public class EchoClient{
 		} catch (MalformedURLException ex) {
 			ex.printStackTrace();
 		} catch (RemoteException ex) {
-		ex.printStackTrace();
+			ex.printStackTrace();
 		}
 		System.out.println(receivedEcho);
 	}
