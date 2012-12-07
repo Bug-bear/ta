@@ -1,0 +1,23 @@
+/**
+* A utility class for char and binary manipulation
+*/
+
+public class SecretParser{
+	public static String perpareWrite(String text){
+		String binary = "";
+		for(int i=0; i<text.length(); i++){
+			binary += ConvertCharToUnicodeBinaryString(text.charAt(i));
+		}
+		return binary;
+	}
+	
+	private static String ConvertCharToUnicodeBinaryString(char c){
+		String unicodeBinary =Integer.toBinaryString(c);
+		return String.format("%16s", unicodeBinary).replace(" ", "0");
+	}	
+	
+	public static char ConvertUnicodeBinaryStringToChar(String s)
+	{
+		return (char) Integer.parseInt(s,2);
+	}
+}
