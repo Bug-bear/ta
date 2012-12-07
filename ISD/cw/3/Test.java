@@ -15,9 +15,11 @@ public class Test{
 	}
 	
 	private static void testPixelRead() throws IllegalArgumentException, IOException{
-		//SteganImage grey = StegGrey("GreyImage.png");
-		String path = "ColourImage.png";
-		SteganImage colour = StegColour(path);
+		SteganImage grey = new StegGrey("GreyImage.png");
+		//SteganImage colour = new StegColour("ColourImage.png");
+		((StegGrey)grey).read(0,0);
+		((StegGrey)grey).writeMessage("wa");
+		grey.saveImage("wa.png");
 	}
 	
 	private static void testCharToBinary(String[] args){
