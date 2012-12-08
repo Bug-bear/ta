@@ -5,6 +5,7 @@ import javax.imageio.*;
 public class Test{
 	public static void main(String[] args){
 		//testCharToBinary(args);
+		
 		try{
 			testPixelWrite();
 			System.out.println();

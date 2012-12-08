@@ -4,6 +4,10 @@ import javax.imageio.*;
 import java.util.*;
 
 public class StegColour extends SteganImage{
+	public StegColour(BufferedImage bi){
+		super(bi);
+	}
+
 	public StegColour(String srcPath) throws IllegalArgumentException, IOException{
 		super(srcPath);
 	}
