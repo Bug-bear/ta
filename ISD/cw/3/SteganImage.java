@@ -4,6 +4,8 @@ import javax.imageio.*;
 
 public abstract class SteganImage{
 	protected BufferedImage image;
+	static final String START = "[";
+	static final String END = "]";
 	
 	public SteganImage(String srcPath) throws IllegalArgumentException, IOException{
 		File f = new File(srcPath);
