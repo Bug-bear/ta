@@ -12,6 +12,10 @@ public abstract class SteganImage{
 		this.image = ImageIO.read(f);
 	}
 	
+	abstract public void writeMessage(String text);
+	
+	abstract public String readMessage();
+	
 	public void saveImage(String dstPath) throws IllegalArgumentException, IOException{
 		File f = new File(dstPath);
 		ImageIO.write(this.image, "png", f);

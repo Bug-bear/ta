@@ -7,79 +7,63 @@ public class StegGrey extends SteganImage{
 		super(srcPath);
 	}
 	
+	@Override
 	public void writeMessage(String text){
 		//add text header and tail
 		text = START + text + END;
+		//inital value for start-up
 		int posX = 0;
 		int posY = 0;
-		String str = ""; // intensity bit string of current pixel
+		String str = getIntensityBitString(posX, posY); //string of 8-bit intensity
+		int spaceLeft = 3;
 		String newStr = "";
-		int spaceLeft = 0;
 		
+		//for every char
 		for(int i=0; i<text.length(); i++){
 			String binary = Parser.ConvertCharToUnicodeBinaryString(text.charAt(i)); // 8 bits of the char
-			System.out.println("char " + text.charAt(i) + " : " + binary); //debug
+			//System.out.println("char " + text.charAt(i) + " : " + binary); //debug
 			int charBitLeft = 16; // number of inserted bits
 			
-			//for this char
-			while(charBitLeft > 0){ 
-				//retrive a new pixel when no space left
-				if(spaceLeft == 0){
-					int intensity = getGreyScaleValue(posX, posY, image);
-					//string of 8-bit intensity
-					str = String.format("%16s", Integer.toBinaryString(intensity)).replace(" ", "0"); 
-					spaceLeft = 3;
-				}
-				
+			while(charBitLeft > 0){ 			
 				//manipulate intensity string
 				if(charBitLeft >= spaceLeft){ //more char bits than avaiable intensity bits
 					if(spaceLeft == 3){ //an unused new string
 						newStr = str.substring(0, str.length()-spaceLeft) + binary.substring(16-charBitLeft, 16-charBitLeft+spaceLeft);
-					} else{ //partly used string
-						//System.out.println(newStr); //debug
+					} else{ //will leave a partly used string
 						newStr += binary.substring(16-charBitLeft, 16-charBitLeft+spaceLeft);
 					}
 					charBitLeft -= spaceLeft;
 					spaceLeft = 0;
 				} else{ //more avaiable intensity bits than char bits to insert
-					//newStr = str.substring(0, str.length()-spaceLeft) + binary.substring(16-charBitLeft);
 					newStr = str.substring(0, str.length()-spaceLeft) + binary.substring(16-charBitLeft);
-					//System.out.println(binary.substring(16-charBitLeft)); //debug
-					//System.out.println(newStr); //debug
 					spaceLeft -= charBitLeft;
-					//System.out.println(spaceLeft); //debug
 					charBitLeft = 0;
 				}
 				
 				//we now have a complele intensity bit string to write
 				if(spaceLeft == 0){
-					System.out.println(newStr); //debug
-					//convert back to string format
-					int grayIntensity = Integer.parseInt(newStr,2);
-					//put intensity to image
-					setGreyScaleValue(posX,posY,grayIntensity,image);
-					newStr = ""; //reset
-				
+					setIntensityBitString(posX,posY,newStr);
 					//update coordinates only if no space left in the current pixel
 					posY++;
 					if(posY == image.getHeight()){
 						posY=0;
 						posX++;
 					}
+					//retrived a new pixel
+					str = getIntensityBitString(posX, posY);
+					spaceLeft = 3;
+					newStr = ""; //reset
 				}
 			}
 		}
 		//handel any left-over
 		if(!newStr.equals("")){
 			newStr = newStr + str.substring(str.length()-spaceLeft);
-			System.out.println(newStr); //debug
-			//convert back to string format
-			int grayIntensity = Integer.parseInt(newStr,2);
-			//put intensity to image
-			setGreyScaleValue(posX,posY,grayIntensity,image);			
+			setIntensityBitString(posX,posY,newStr);
 		}
 	}
 	
+	@Override
 	public String readMessage(){
 		String text = "";
 		String charString = "";
@@ -114,15 +98,23 @@ public class StegGrey extends SteganImage{
 	}
 	
 	//helpers
-	private int getGreyScaleValue(int x, int y, BufferedImage bi)
-	{
+	private String getIntensityBitString(int x, int y){
+		int intensity = getGreyScaleValue(x, y, image);
+		return String.format("%16s", Integer.toBinaryString(intensity)).replace(" ", "0"); 
+	}
+	
+	private void setIntensityBitString(int x, int y, String newStr){
+		int grayIntensity = Integer.parseInt(newStr,2);
+		setGreyScaleValue(x,y,grayIntensity,image);	
+	}	
+	
+	private int getGreyScaleValue(int x, int y, BufferedImage bi){
 		WritableRaster raster = bi.getRaster();
 		int grayIntensity = raster.getSample(x, y, 0);
 		return grayIntensity;
 	}
 	
-	private void setGreyScaleValue(int x, int y,int grayIntensity, BufferedImage bi)
-	{
+	private void setGreyScaleValue(int x, int y,int grayIntensity, BufferedImage bi){
 		WritableRaster raster = bi.getRaster();
 		raster.setSample(x,y,0,grayIntensity);
 	}
