@@ -2,7 +2,7 @@
 * A utility class for char and binary manipulation
 */
 
-public class SecretParser{
+public class Parser{
 	public static String ConvertCharToUnicodeBinaryString(char c){
 		String unicodeBinary =Integer.toBinaryString(c);
 		return String.format("%16s", unicodeBinary).replace(" ", "0");

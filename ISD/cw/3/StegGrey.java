@@ -7,12 +7,6 @@ public class StegGrey extends SteganImage{
 		super(srcPath);
 	}
 	
-	public int read(int x, int y){
-		WritableRaster raster = image.getRaster();
-		int grayIntensity = raster.getSample(x, y, 0);
-		return grayIntensity;
-	}
-	
 	public void writeMessage(String text){
 		//add text header and tail
 		text = START + text + END;
@@ -23,7 +17,7 @@ public class StegGrey extends SteganImage{
 		int spaceLeft = 0;
 		
 		for(int i=0; i<text.length(); i++){
-			String binary = ConvertCharToUnicodeBinaryString(text.charAt(i)); // 8 bits of the char
+			String binary = Parser.ConvertCharToUnicodeBinaryString(text.charAt(i)); // 8 bits of the char
 			System.out.println("char " + text.charAt(i) + " : " + binary); //debug
 			int charBitLeft = 16; // number of inserted bits
 			
@@ -86,27 +80,40 @@ public class StegGrey extends SteganImage{
 		}
 	}
 	
-	public void readMessage(){
+	public String readMessage(){
 		String text = "";
-		char letter = '\u0000'; 
+		String charString = "";
+		int bitCtr = 0;
 		for(int i=0; i<image.getWidth(); i++){
 			for(int j=0; j<image.getHeight(); j++){
 				//retrieve intensity of this pixel
 				int intensity = getGreyScaleValue(i, j, image);
 				//convert to bit string
 				String str = String.format("%16s", Integer.toBinaryString(intensity)).replace(" ", "0");
-				//retrieve the last 3 bits
+				//System.out.println(str); //debug
+				//retrieve bits
+				if(bitCtr <= (16-3)){
+					charString += str.substring(str.length()-3);
+					bitCtr += 3;
+				} else{
+					charString += str.substring(str.length()-3, str.length()-3+(16-bitCtr));
+					char letter = Parser.ConvertUnicodeBinaryStringToChar(charString);
+					if(letter == ']'){
+						return text;
+					}
+					if(letter != '['){
+						text += letter;
+					}
+					//System.out.println(text); //debug
+					charString = str.substring(str.length()-(3-(16-bitCtr)));
+					bitCtr = 3-(16-bitCtr);
+				}
 			}
 		}
+		return text;
 	}
 	
-	
-	// helpers
-	private static String ConvertCharToUnicodeBinaryString(char c){
-		String unicodeBinary =Integer.toBinaryString(c);
-		return String.format("%16s", unicodeBinary).replace(" ", "0");
-	}	
-	
+	//helpers
 	private int getGreyScaleValue(int x, int y, BufferedImage bi)
 	{
 		WritableRaster raster = bi.getRaster();
