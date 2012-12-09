@@ -40,7 +40,7 @@ public class SteganographyFrame extends JFrame{
 		this.setSize(FRAME_WIDTH,FRAME_HEIGHT);
 		//for your components, right hand side is for the image
 		panel = new JPanel();
-		panel.setLayout(new GridLayout(7, 2));
+		panel.setLayout(new GridLayout(5, 2));
 		panel2 = new ImagePanel();
 		loadButton = new JButton("Load / \u52A0\u8F7D");
 		saveButton = new JButton("Save / \u4FDD\u5B58");
@@ -62,11 +62,7 @@ public class SteganographyFrame extends JFrame{
 		this.panel.add(loadButton); this.panel.add(saveButton);
 		this.panel.add(insertButton); this.panel.add(readButton);
 		this.panel.add(new JLabel("<html>Message to insert<br>\u8F93\u5165\u4FE1\u606F</html>")); this.panel.add(inputScrollPane);
-		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
-		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
 		this.panel.add(new JLabel("<html>Retrieved message<br>\u8BFB\u5F97\u4FE1\u606F</html>"));  this.panel.add(outputScrollPane);
-		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
-		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
 		this.panel.add(new JLabel("<html>Status<br>\u72B6\u6001</html>", SwingConstants.LEFT));
 		this.panel.add(info);
 		
