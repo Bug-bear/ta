@@ -97,6 +97,9 @@ public class StegColour extends SteganImage{
 						return text;
 					}
 					if(letter != '['){
+						if(text.length() == 0){
+							return "no message found \n \u65E0\u4FE1\u606F";
+						}					
 						text += letter;
 					}
 					if(usedBand < 3){

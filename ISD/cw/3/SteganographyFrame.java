@@ -21,12 +21,13 @@ import java.awt.Graphics2D;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import java.awt.image.*; // required for buffered image
+import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 public class SteganographyFrame extends JFrame{
 	private static final int FRAME_WIDTH = 500;
 	private static final int FRAME_HEIGHT = 350;
 	private BufferedImage bi = null; //Do not store your buffered image reference here.
-	private SteganImage image; //colour or grey
+	private SteganImage image = null; //colour or grey
 	private JPanel panel;
 	private ImagePanel panel2;
 	private JButton loadButton, saveButton, insertButton, readButton;
@@ -59,10 +60,10 @@ public class SteganographyFrame extends JFrame{
 		
 		this.panel.add(loadButton); this.panel.add(saveButton);
 		this.panel.add(insertButton); this.panel.add(readButton);
-		this.panel.add(new JLabel("Message to insert / \u8F93\u5165\u4FE1\u606F")); this.panel.add(inputScrollPane);
+		this.panel.add(new JLabel("<html>Message to insert<br>\u8F93\u5165\u4FE1\u606F</html>")); this.panel.add(inputScrollPane);
 		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
 		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
-		this.panel.add(new JLabel("Retrieved message /  \u8BFB\u5F97\u4FE1\u606F"));  this.panel.add(outputScrollPane);
+		this.panel.add(new JLabel("<html>Retrieved message<br>\u8BFB\u5F97\u4FE1\u606F</html>"));  this.panel.add(outputScrollPane);
 		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
 		this.panel.add(new JSeparator(SwingConstants.HORIZONTAL));
 		this.panel.add(new JLabel("<html>Status<br>\u72B6\u6001</html>", SwingConstants.LEFT));
