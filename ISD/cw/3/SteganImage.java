@@ -6,6 +6,7 @@ public abstract class SteganImage{
 	protected BufferedImage image;
 	static final String START = "[";
 	static final String END = "]";
+	static final int UNI_CODE_LENGTH = 16;
 	
 	//for GUI version
 	public SteganImage(BufferedImage bi){

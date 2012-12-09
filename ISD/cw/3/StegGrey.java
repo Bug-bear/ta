@@ -26,20 +26,20 @@ public class StegGrey extends SteganImage{
 		for(int i=0; i<text.length(); i++){
 			String binary = Parser.ConvertCharToUnicodeBinaryString(text.charAt(i)); // 8 bits of the char
 			//System.out.println("char " + text.charAt(i) + " : " + binary); //debug
-			int charBitLeft = 16; // number of inserted bits
+			int charBitLeft = UNI_CODE_LENGTH; // number of inserted bits
 			
 			while(charBitLeft > 0){ 			
 				//manipulate intensity string
 				if(charBitLeft >= spaceLeft){ //more char bits than avaiable intensity bits
 					if(spaceLeft == 3){ //an unused new string
-						newStr = str.substring(0, str.length()-spaceLeft) + binary.substring(16-charBitLeft, 16-charBitLeft+spaceLeft);
+						newStr = str.substring(0, str.length()-spaceLeft) + binary.substring(UNI_CODE_LENGTH-charBitLeft, UNI_CODE_LENGTH-charBitLeft+spaceLeft);
 					} else{ //will leave a partly used string
-						newStr += binary.substring(16-charBitLeft, 16-charBitLeft+spaceLeft);
+						newStr += binary.substring(UNI_CODE_LENGTH-charBitLeft, UNI_CODE_LENGTH-charBitLeft+spaceLeft);
 					}
 					charBitLeft -= spaceLeft;
 					spaceLeft = 0;
 				} else{ //more avaiable intensity bits than char bits to insert
-					newStr = str.substring(0, str.length()-spaceLeft) + binary.substring(16-charBitLeft);
+					newStr = str.substring(0, str.length()-spaceLeft) + binary.substring(UNI_CODE_LENGTH-charBitLeft);
 					spaceLeft -= charBitLeft;
 					charBitLeft = 0;
 				}
@@ -80,24 +80,22 @@ public class StegGrey extends SteganImage{
 				String str = String.format("%16s", Integer.toBinaryString(intensity)).replace(" ", "0");
 				//System.out.println(str); //debug
 				//retrieve bits
-				if(bitCtr <= (16-3)){
+				if(bitCtr <= (UNI_CODE_LENGTH-3)){
 					charString += str.substring(str.length()-3);
 					bitCtr += 3;
 				} else{
-					charString += str.substring(str.length()-3, str.length()-3+(16-bitCtr));
+					charString += str.substring(str.length()-3, str.length()-3+(UNI_CODE_LENGTH-bitCtr));
 					char letter = Parser.ConvertUnicodeBinaryStringToChar(charString);
 					if(letter == ']'){
-						return text;
+						return text.substring(1); //get rid of leading "["
 					}
-					if(letter != '['){
-						if(text.length() == 0){
-							return "no message found \n \u65E0\u4FE1\u606F";
-						}
-						text += letter;
+					text += letter;
+					if((letter != '[') &&(text.length() == 1)){
+						return "no message found \u65E0\u4FE1\u606F";
 					}
 					//System.out.println(text); //debug
-					charString = str.substring(str.length()-(3-(16-bitCtr)));
-					bitCtr = 3-(16-bitCtr);
+					charString = str.substring(str.length()-(3-(UNI_CODE_LENGTH-bitCtr)));
+					bitCtr = 3-(UNI_CODE_LENGTH-bitCtr);
 				}
 			}
 		}

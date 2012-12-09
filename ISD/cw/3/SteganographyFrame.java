@@ -10,6 +10,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.border.*;
 import java.awt.GridLayout;
 import java.awt.Graphics;
@@ -88,7 +89,7 @@ public class SteganographyFrame extends JFrame{
 				g.drawImage(bi,0,0,getWidth(),getHeight(),null);
 			}
 			else{
-				info.setText("<html>no loaded image<br>\u65E0\u56FE\u7247</html>");
+				info.setText("<html>Image not loaded<br>\u65E0\u56FE\u7247</html>");
 			}
 		}
 	}
@@ -97,6 +98,8 @@ public class SteganographyFrame extends JFrame{
 		public void actionPerformed(ActionEvent event){
 			try{
 				bi = ImageIO.read(LoadDialog());
+				inputArea.setText("");
+				outputArea.setText("");
 				repaint();
 				if(bi.getType() == BufferedImage.TYPE_BYTE_GRAY){
 					image = new StegGrey(bi);
@@ -105,8 +108,8 @@ public class SteganographyFrame extends JFrame{
 					image = new StegColour(bi);
 				}
 			} catch(IllegalArgumentException e){
-				info.setText("<html>none selected<br>\u672A\u52A0\u8F7D\u56FE\u7247</html>");
-				JOptionPane.showMessageDialog(panel,"none selected / \u672A\u52A0\u8F7D\u56FE\u7247");
+				info.setText("<html>None selected<br>\u672A\u52A0\u8F7D\u56FE\u7247</html>");
+				JOptionPane.showMessageDialog(panel,"None selected / \u672A\u52A0\u8F7D\u56FE\u7247");
 				//e.printStackTrace();
 			} catch(IOException e){
 				e.printStackTrace();
@@ -118,13 +121,13 @@ public class SteganographyFrame extends JFrame{
 		public void actionPerformed(ActionEvent event){
 			try{
 				image.saveImage(SaveDialog());
-				info.setText("<html>image saved<br>\u56FE\u7247\u5DF2\u4FDD\u5B58</html>");
-				JOptionPane.showMessageDialog(panel,"image saved / \u56FE\u7247\u5DF2\u4FDD\u5B58");
+				info.setText("<html>Image saved<br>\u56FE\u7247\u5DF2\u4FDD\u5B58</html>");
+				JOptionPane.showMessageDialog(panel,"Image saved / \u56FE\u7247\u5DF2\u4FDD\u5B58");
 			} catch(NullPointerException e){
-				JOptionPane.showMessageDialog(panel,"none selected / \u672A\u52A0\u8F7D\u56FE\u7247");
+				JOptionPane.showMessageDialog(panel,"None selected / \u672A\u52A0\u8F7D\u56FE\u7247");
 				//e.printStackTrace();
 			} catch(IllegalArgumentException e){
-				JOptionPane.showMessageDialog(panel,"none selected / \u672A\u52A0\u8F7D\u56FE\u7247");
+				JOptionPane.showMessageDialog(panel,"None selected / \u672A\u52A0\u8F7D\u56FE\u7247");
 				//e.printStackTrace();
 			} catch(IOException e){
 				e.printStackTrace();
@@ -134,29 +137,40 @@ public class SteganographyFrame extends JFrame{
 	
 	class ClickInsertButton implements ActionListener{
 		public void actionPerformed(ActionEvent event){
-			image.writeMessage(inputArea.getText());
-			info.setText("<html>message inserted<br>\u4FE1\u606F\u5199\u5165\u5B8C\u6210</html>");
-			JOptionPane.showMessageDialog(panel,"message inserted / \u4FE1\u606F\u5199\u5165\u5B8C\u6210");
+			try{
+				image.writeMessage(inputArea.getText());
+				info.setText("<html>Message inserted<br>\u4FE1\u606F\u5199\u5165\u5B8C\u6210</html>");
+				JOptionPane.showMessageDialog(panel,"Message inserted / \u4FE1\u606F\u5199\u5165\u5B8C\u6210");
+			} catch(NullPointerException e){
+				info.setText("<html>Image not yet loaded<br>\u65E0\u56FE\u7247</html>");
+				JOptionPane.showMessageDialog(panel,"Image not yet loaded / \u65E0\u56FE\u7247");
+			}
 		}
 	}
 	
 	class ClickReadButton implements ActionListener{
 		public void actionPerformed(ActionEvent event){
-			//outputField.setText(image.readMessage());
-			//outputArea.setText(image.readMessage());
-			String retrieved = image.readMessage();
-			//output.setColumn(retrieved.length());
-			outputArea.setText(retrieved);
-			repaint();
-			JOptionPane.showMessageDialog(panel,"message inserted / \u4FE1\u606F\u8BFB\u53D6\u5B8C\u6210");
+			try{
+				String retrieved = image.readMessage();
+				outputArea.setText(retrieved);
+				repaint();
+				JOptionPane.showMessageDialog(panel,"message inserted / \u4FE1\u606F\u8BFB\u53D6\u5B8C\u6210");
+			} catch(NullPointerException e){
+				info.setText("<html>Image not yet loaded<br>\u65E0\u56FE\u7247</html>");
+				JOptionPane.showMessageDialog(panel,"Image not yet loaded / \u65E0\u56FE\u7247");
+			}
 		}	
 	}	
 	
 	public static File LoadDialog() throws IOException{
 		File f = null;
-		JFileChooser selectfile= new JFileChooser(new File("."));
+		//JFileChooser selectfile= new JFileChooser();
+		JFileChooser selectfile= new JFileChooser(new File(".")); //start from pwd
+		FileNameExtensionFilter filter = new FileNameExtensionFilter(
+        "JPG, PNG & GIF Images", "jpg", "png", "gif");
+		selectfile.setFileFilter(filter);	
 		int returnVal = selectfile.showOpenDialog(null);
-		if (returnVal==JFileChooser.APPROVE_OPTION){
+		if (returnVal == JFileChooser.APPROVE_OPTION){
 			f = selectfile.getSelectedFile();
 		}
 		return f;
@@ -164,7 +178,8 @@ public class SteganographyFrame extends JFrame{
 	
 	public static File SaveDialog() throws IOException{
 		File f = null;
-		JFileChooser selectfile= new JFileChooser(new File("."));
+		JFileChooser selectfile= new JFileChooser(new File(".")); //start from pwd
+		selectfile.setSelectedFile(new File("fileToSave.png"));
 		int returnVal = selectfile.showSaveDialog(null);
 		if (returnVal==JFileChooser.APPROVE_OPTION){
 			f = selectfile.getSelectedFile();

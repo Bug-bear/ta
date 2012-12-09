@@ -26,20 +26,20 @@ public class StegColour extends SteganImage{
 		//for every char
 		for(int i=0; i<text.length(); i++){
 			String binary = Parser.ConvertCharToUnicodeBinaryString(text.charAt(i)); // 8 bits of the char
-			int charBitLeft = 16; // number of inserted bits
+			int charBitLeft = UNI_CODE_LENGTH; // number of inserted bits
 			//System.out.println("char " + text.charAt(i) + " : " + binary); //debug
 			
 			while(charBitLeft > 0){ 				
 				//manipulate intensity string
 				if(charBitLeft >= spaceLeft){ //more char bits than avaiable intensity bits
 					for(int p=3-spaceLeft; p<3; p++){
-						newStr[p] = str[p].substring(0, str[p].length()-1) + binary.substring(16-charBitLeft,16-charBitLeft+1);
+						newStr[p] = str[p].substring(0, str[p].length()-1) + binary.substring(UNI_CODE_LENGTH-charBitLeft,UNI_CODE_LENGTH-charBitLeft+1);
 						charBitLeft--;			
 					}
 					spaceLeft = 0;
 				} else{ //will leave a partly filled string array
 					for(int p=0; p<charBitLeft; p++){
-						newStr[p] = str[p].substring(0, str[p].length()-1) + binary.substring(16-charBitLeft+p,16-charBitLeft+p+1);
+						newStr[p] = str[p].substring(0, str[p].length()-1) + binary.substring(UNI_CODE_LENGTH-charBitLeft+p,UNI_CODE_LENGTH-charBitLeft+p+1);
 						spaceLeft--;
 					}
 					charBitLeft = 0;
@@ -83,24 +83,22 @@ public class StegColour extends SteganImage{
 				String[] str = getIntensityBitStringArray(i,j);
 				usedBand = 0;
 				//retrieve bits
-				for(int p=usedBand; p<3 && bitCtr<16; p++){
+				for(int p=usedBand; p<3 && bitCtr<UNI_CODE_LENGTH; p++){
 					charString += str[p].substring(str[p].length()-1);
 					bitCtr++;
 					usedBand++;
 				}
-				if(bitCtr == 16){
+				if(bitCtr == UNI_CODE_LENGTH){
 					bitCtr = 0;
 					//System.out.println(text); //debug
 					char letter = Parser.ConvertUnicodeBinaryStringToChar(charString);
 					charString = "";
 					if(letter == ']'){
-						return text;
+						return text.substring(1); //get rid of leading "["
 					}
-					if(letter != '['){
-						if(text.length() == 0){
-							return "no message found \n \u65E0\u4FE1\u606F";
-						}					
-						text += letter;
+					text += letter;
+					if((letter != '[') &&(text.length() == 1)){
+						return "no message found \u65E0\u4FE1\u606F";
 					}
 					if(usedBand < 3){
 						for(int p=usedBand; p<3; p++){
