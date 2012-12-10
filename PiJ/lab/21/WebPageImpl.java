@@ -56,7 +56,7 @@ public class WebPageImpl implements WebPage{
 				}
 				else{
 					inURL = true;
-					link += line.substring(pos1+URL_START.length());
+					link += line.substring(pos1);
 				}
 			}
 		}
