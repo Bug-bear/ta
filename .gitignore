@@ -2,12 +2,12 @@ C++/*
 !C++/lab/
 PiJ/*
 !PiJ/lab/
+PiJ/lab/.metadata/*
 ISD/*
 !ISD/lab/
 !ISD/cw/
 ISD/cw/Soki3
-ISD/cw/dw
-
+ISTests13/
 Android/
 CompSys/
 ICS/
@@ -29,3 +29,6 @@ launch4j/
 *.class
 *.txt
 *.csv
+*.log
+*.png
+*.jpg

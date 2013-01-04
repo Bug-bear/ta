@@ -1,18 +1,21 @@
 import java.util.*;
 import java.net.*;
 import java.io.*;
+import java.util.regex.*;
 
 public class WebPageImpl implements WebPage{
 	private URL url = null;
 	private Set<String> links = null;
 	private Set<String> emails = null;
+	private Pattern pattern = null;
 	
 	public WebPageImpl(String url) throws MalformedURLException, IOException{
 		this.url = new URL(url);
 		this.links = new HashSet<String>();
 		this.emails = new HashSet<String>();
+		this.pattern = Pattern.compile(EMAIL_PATTERN);
 		extractLinks();
-		extractEmails();
+		//extractEmails();
 	}
 
 	public String getUrl(){
@@ -66,6 +69,14 @@ public class WebPageImpl implements WebPage{
 	
 	private void extractEmails() throws IOException{
 		BufferedReader in = new BufferedReader(new InputStreamReader(this.url.openStream()));
+		String line = null;
+		while ((line = in.readLine()) != null) {	
+			Matcher matcher = pattern.matcher(line);
+			//if(matcher.matches()){
+				//System.out.println(matcher.group());
+				System.out.println(matcher.matches());
+			//}
+		}
 	}
 	
 	private String refineQuotedURL(String quoted){
@@ -77,11 +88,19 @@ public class WebPageImpl implements WebPage{
 	
 	//test
 	public static void main(String[] args){
-		String addr = "http://www.dcs.bbk.ac.uk/~peng/";
+		
+		String addr = "http://www.dcs.bbk.ac.uk";
+		//String addr = "http://www.dcs.bbk.ac.uk/~martin/";
 		try{
 			WebPageImpl page = new WebPageImpl(addr);
-			System.out.println(page.getUrl());
+			//page.extractEmails();
+			//System.out.println(page.getUrl());
 			System.out.println(page.getLinks());
+			/*//test email matching
+			String email = "emailto:peng@dcs.bbk.ac.uk";
+			Matcher matcher = page.pattern.matcher(email);
+			System.out.println(matcher.matches());
+			System.out.println(matcher.group());*/
 		} catch(MalformedURLException e){
 			e.printStackTrace();
 		} catch(IOException e){
