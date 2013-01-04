@@ -99,7 +99,7 @@ public class SteganFrame extends JFrame
 				try{
                     BufferedImage s = ImageIO.read(f);
                     //System.out.println(s.getType());
-                    switch ( s.getType()) {
+                    switch (s.getType()) {
                             case BufferedImage.TYPE_4BYTE_ABGR: si = new StegRGBimage(s);
                                                                 break;
                             case BufferedImage.TYPE_BYTE_GRAY:  si = new StegGreyScale(s);
@@ -148,20 +148,25 @@ public class SteganFrame extends JFrame
 		boolean boolRead= true;
 		for (int x = 0; x<si.getImage().getWidth(); x++){
 			for (int y = 0; y<si.getImage().getHeight(); y++){  
+				//at a particular (x,y) coordinate
 				if (boolRead){
+					//accumulate bits of the pixel
 					str=str+si.ReadPixel(x,y); 
 					if (str.length() >= UNICODE_BIT_LENGTH){
+						//have enough bits for another char, convert!
 						char c = ConvertUnicodeBinaryToChar(str.substring(0,UNICODE_BIT_LENGTH));
 						if (c == END_CHAR){
 							boolRead= false;
 						} else {
 							outputStr=outputStr+c ;
 						}
+						//get rid of the already-converted bits for the next iteration
 						str=str.substring(UNICODE_BIT_LENGTH,str.length());
 					}                      
 				}
 			}                        
 		}
+		//return the final string without the leading '['
         return outputStr.substring(1,outputStr.length());
     }
     
@@ -169,7 +174,7 @@ public class SteganFrame extends JFrame
 		String str="";
 		int y=0;
 		do{
-			str=str+si.ReadPixel(0,y); 
+			str = str+si.ReadPixel(0,y); 
 			y++;
 		} while(str.length() < UNICODE_BIT_LENGTH);
 		char  c = ConvertUnicodeBinaryToChar(str.substring(0,UNICODE_BIT_LENGTH)); 
@@ -200,13 +205,17 @@ public class SteganFrame extends JFrame
         str = START_CHAR + str + END_CHAR;
         String s = ConvertWordstoBits(str);
       
-        if (s.length() <= si.Capacity()){
+        if (s.length() <= si.Capacity()){ //if there is enough space for our message
             for (int x = 0; x<si.getImage().getWidth(); x++){
-                for (int y = 0; y<si.getImage().getHeight(); y++){             
+                for (int y = 0; y<si.getImage().getHeight(); y++){        
+					//at this specific pixel
                     if (loc < s.length()){
+						//retrieve the next 3 bits
                         String bits = s.substring(loc, Math.min(s.length(),loc+si.BITS_PER_PIXEL));
+						//write this 3 bits to the pixel
                         si.WritePixel(x, y, bits);
-                        loc=loc+si.BITS_PER_PIXEL ;
+                        //move on to the position for the next batch
+						loc = loc+si.BITS_PER_PIXEL ;
                     }   
                 }      
             }
@@ -214,8 +223,7 @@ public class SteganFrame extends JFrame
             repaint();  
         }else{
             System.out.println("Text too long");  
-        } 
-        
+        }
     }
 
 	class WriteMessage implements ActionListener{
