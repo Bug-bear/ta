@@ -10,25 +10,28 @@ public class StegGreyScale extends SteganImage{
     public void WritePixel(int x, int y, String bits){
         int grayIntensity = getGreyScaleValue(x, y);
         String str = Integer.toBinaryString(grayIntensity);
+		//original intensity binary
         str = padString(str,BITS_PER_PIXEL,TO_THE_LEFT);
-   
+		//binary message bits to insert
         bits = padString(bits,BITS_PER_PIXEL,TO_THE_RIGHT);
-   
+		//insert!
         String newStr = str.substring(0,str.length()-BITS_PER_PIXEL)+bits;
-       
+		//put back to the pixel
         setGreyScaleValue(x, y, Integer.parseInt(newStr,2));
     }
 	
     public  String ReadPixel(int x, int y){
+		//get integer intensity
         int grayIntensity = getGreyScaleValue(x,y);         
-        
+        //convert to binary
         String str = Integer.toBinaryString(grayIntensity);
-        
+        //make sure it is at least 3 bits long
         str= padString(str,BITS_PER_PIXEL,TO_THE_LEFT);
-        
+        //return the last 3 bits
         return str.substring(str.length()-BITS_PER_PIXEL,str.length());
     }
 
+	//helpers
     private int getGreyScaleValue(int x, int y){
 		WritableRaster raster   = bi.getRaster();
 		int grayIntensity = raster.getSample(x, y, 0);
@@ -40,6 +43,7 @@ public class StegGreyScale extends SteganImage{
 		raster.setSample(x,y,0,grayIntensity);   
     }
 
+	//needed for greyScale image because we need to ensure at least 3 bits long binary intensity
     private String padString(String str, int length,boolean Onleft){
 		if (str.length()>=length){
 			return str;

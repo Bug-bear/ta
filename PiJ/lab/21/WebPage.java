@@ -8,6 +8,10 @@ public interface WebPage {
 	static final String URL_START = "<a";
 	//static final String URL_END = "</a>";
 	static final String URL_END = ">";
+	/*static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";*/
+	static final String EMAIL_PATTERN = ".[A-Za-z0-9]+@.+\\.[a-z]+";
+	//".+@.+\\.[a-z]+";
 	/**
 	* Returns the URL that identifies this web page.
 	* @return the URL that identifies this web page.

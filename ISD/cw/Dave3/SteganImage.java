@@ -22,6 +22,7 @@ public abstract class SteganImage{
         }
     }
     
+	//signatures of methods common for both image types
     public abstract void WritePixel(int x, int y, String bits);
         
     public abstract String ReadPixel(int x, int y);
