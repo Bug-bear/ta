@@ -21,6 +21,7 @@ thinkingInJava/
 xmltools/
 ITP/
 launch4j/
+*.doc
 *.exe
 *.pdf
 *.ppt
