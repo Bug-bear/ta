@@ -11,7 +11,7 @@ public class TestDeque{
 	
 	@Test
 	public void testAppendInt(){
-		DequeImpl myDeque = new DequeImpl();
+		DequeImpl<Integer> myDeque = new DequeImpl<Integer>();
 		Dnode<Integer> d1 = new Dnode<Integer>(2);
 		myDeque.append(d1);
 		assertEquals(d1, myDeque.head);
@@ -19,7 +19,7 @@ public class TestDeque{
 	
 	@Test
 	public void testAppendDouble(){
-		DequeImpl myDeque = new DequeImpl();
+		DequeImpl<Double>  myDeque = new DequeImpl<Double> ();
 		Dnode<Double> d2 = new Dnode<Double>(2.2);
 		myDeque.append(d2);
 		assertEquals(d2, myDeque.head);
@@ -27,7 +27,7 @@ public class TestDeque{
 	
 	@Test
 	public void testAppendString(){
-		DequeImpl myDeque = new DequeImpl();
+		DequeImpl<String>  myDeque = new DequeImpl<String> ();
 		Dnode<String> d3 = new Dnode<String>("3.3");
 		myDeque.append(d3);
 		assertEquals(d3, myDeque.head);

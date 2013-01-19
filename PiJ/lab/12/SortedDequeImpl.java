@@ -1,4 +1,4 @@
-public class SortedDequeImpl<T extends Comparable> implements Deque{
+public class SortedDequeImpl<T extends Comparable> implements Deque<T>{
 	public Dnode<T> head;
 	public Dnode<T> tail;
 	
@@ -6,7 +6,7 @@ public class SortedDequeImpl<T extends Comparable> implements Deque{
 		head = null;
 	}
 	
-	public void append(Dnode d){
+	public void append(Dnode<T> d){
 		if(head == null){
 			head = d;
 			tail = d;
@@ -20,8 +20,8 @@ public class SortedDequeImpl<T extends Comparable> implements Deque{
 		}
 	}
 	
-	public Dnode popFront(){
-		Dnode temp = head;
+	public Dnode<T> popFront(){
+		Dnode<T> temp = head;
 		if(temp == null){
 			return null;
 		}

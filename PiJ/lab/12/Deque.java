@@ -1,4 +1,4 @@
-public interface Deque{
-	void append(Dnode d);
-	Dnode popFront();
+public interface Deque<T extends Comparable>{
+	void append(Dnode<T> d);
+	Dnode<T> popFront();
 }

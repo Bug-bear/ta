@@ -1,7 +1,7 @@
 public class Dnode<T extends Comparable>{
 	public T value;
-	public Dnode left;
-	public Dnode right;
+	public Dnode<T> left;
+	public Dnode<T> right;
 	
 	public Dnode(T v){
 		this.value = v;
