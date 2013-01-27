@@ -1,5 +1,6 @@
 public class McCarthy{
 	public int mcCarthy91(int n) {
+		System.out.println(n);
 		if (n > 100) {
 			return n - 10;
 		} else {
